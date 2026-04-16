@@ -1,9 +1,4 @@
-// ============================================
-// Roast & Ritual — script.js
-// Shared across index.html, about.html, contact.html
-// ============================================
 
-// ── 1. SCROLL REVEAL ────────────────────────
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach(e => {
@@ -19,7 +14,6 @@ const observer = new IntersectionObserver(
 document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
 
 
-// ── 2. MENU DATA (used on index.html) ───────
 const menuItems = [
   { name: 'Espresso',        desc: 'Double shot, 18g, 30ml',            price: 'Rs 180',  tag: 'Classic'  },
   { name: 'Pour Over',       desc: 'Single origin, filter brew',         price: 'Rs 280',  tag: 'Seasonal' },
@@ -49,7 +43,7 @@ if (menuContainer) {
 }
 
 
-// ── 3. ABOUT PAGE DATA ──────────────────────
+
 const values = [
   { icon: '🌱', title: 'Direct Trade',    desc: 'We buy directly from farmers, cutting out middlemen and paying above-market prices.' },
   { icon: '🔥', title: 'Small Batch',     desc: 'Every roast is under 5kg. Freshness isn\'t a feature — it\'s the whole point.' },
@@ -117,7 +111,7 @@ if (timeline) {
 }
 
 
-// ── 4. CONTACT PAGE ─────────────────────────
+
 const hoursData = [
   { day: 'Monday – Friday', hours: '7:00 AM – 9:00 PM' },
   { day: 'Saturday',        hours: '8:00 AM – 10:00 PM' },
@@ -137,12 +131,12 @@ if (hoursList) {
   });
 }
 
-// Live open/closed status
+
 const openStatus = document.getElementById('open-status');
 const openDetail = document.getElementById('open-detail');
 if (openStatus) {
   const now = new Date();
-  const day = now.getDay();   // 0=Sun, 6=Sat
+  const day = now.getDay(); 
   const hour = now.getHours();
 
   let open = false;
@@ -161,7 +155,7 @@ if (openStatus) {
   }
 }
 
-// Form validation & submission
+
 window.submitForm = function () {
   const fname   = document.getElementById('fname')?.value.trim();
   const lname   = document.getElementById('lname')?.value.trim();
@@ -176,7 +170,7 @@ window.submitForm = function () {
   }
   errEl.classList.add('hidden');
 
-  // Simulate submission
+ 
   document.getElementById('contact-form').classList.add('hidden');
   document.getElementById('form-success').classList.remove('hidden');
 };
