@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Roast & Ritual</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            cream: '#F5EFE0',
+            espresso: '#1C0F05',
+            roast: '#3D1F0A',
+            caramel: '#C8813A',
+            steam: '#EDE3CC',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream text-espresso font-sans overflow-x-hidden">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-espresso/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-serif font-black text-xl tracking-tight text-espresso">Luna <span class="text-caramel">  Bean</span> Cafe</a>
+      <div class="flex items-center gap-8">
+        <a href="index.html" class="text-sm font-medium text-espresso/50 hover:text-espresso transition-colors">Home</a>
+        <a href="about.html" class="text-sm font-medium text-espresso border-b-2 border-caramel pb-0.5">About</a>
+        <a href="contact.html" class="text-sm font-medium text-espresso/50 hover:text-espresso transition-colors">Contact</a>
+        <a href="contact.html" class="text-sm font-medium bg-espresso text-cream px-4 py-2 rounded-full hover:bg-roast transition-colors">Reserve a Table</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-36 pb-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: repeating-linear-gradient(45deg, #1C0F05 0, #1C0F05 1px, transparent 0, transparent 50%); background-size: 12px 12px;"></div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <p class="text-caramel text-xs tracking-[0.3em] uppercase font-medium mb-6 reveal-up">Our Story</p>
+      <h1 class="font-serif font-black text-6xl md:text-8xl leading-none tracking-tighter reveal-up delay-1">
+        More than<br/>
+        <em class="italic text-caramel">a cup of</em><br/>
+        coffee.
+      </h1>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="pb-24">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+
+      <div class="reveal-up delay-2 space-y-6">
+        <div class="bg-espresso text-cream rounded-3xl p-10">
+          <p class="font-serif italic text-2xl leading-relaxed mb-6">"We started with a single roaster, a borrowed table, and an obsession with the perfect extraction."</p>
+          <p class="text-cream/40 text-sm">— Priya Shrestha, Founder</p>
+        </div>
+        <p class="text-espresso/60 leading-relaxed text-lg">
+          Roast & Ritual was born in 1987 in a tiny shopfront in Thamel. Back then, specialty coffee in Kathmandu was nearly unheard of. Priya had just returned from a year traveling through Ethiopia and Colombia, carrying notebooks filled with tasting notes and a dream.
+        </p>
+        <p class="text-espresso/60 leading-relaxed">
+          Today we work directly with 12 farming families across Ethiopia, Guatemala, Indonesia, and Nepal. Every bean is traceable. Every roast is done on-site in small 5kg batches. Nothing sits in a warehouse.
+        </p>
+      </div>
+
+      <div class="reveal-up delay-3 space-y-4">
+        <!-- Values -->
+        <div class="bg-steam rounded-3xl p-8">
+          <p class="text-caramel text-xs tracking-widest uppercase mb-6">What we stand for</p>
+          <div class="space-y-5" id="values-list"></div>
+        </div>
+
+        <!-- Team strip -->
+        <div class="bg-caramel rounded-3xl p-8 text-cream">
+          <p class="text-cream/60 text-xs tracking-widest uppercase mb-4">The Team</p>
+          <div class="space-y-4" id="team-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="bg-espresso text-cream py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-caramel text-xs tracking-[0.3em] uppercase mb-4">Milestones</p>
+      <h2 class="font-serif font-black text-5xl mb-16">36 years<br/><em class="italic">of ritual.</em></h2>
+      <div class="relative">
+        <div class="absolute left-0 top-0 bottom-0 w-px bg-cream/10"></div>
+        <div id="timeline" class="space-y-10 pl-8"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-espresso text-cream/40 py-8 border-t border-cream/10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-between items-center gap-4 text-sm">
+      <p class="font-serif font-bold text-cream/80">Roast <span class="text-caramel">&</span> Ritual</p>
+      <p>© 2024 · Thamel, Kathmandu · Built with Tailwind CSS</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

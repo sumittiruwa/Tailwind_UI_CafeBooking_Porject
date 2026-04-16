@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Roast & Ritual</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            cream: '#F5EFE0',
+            espresso: '#1C0F05',
+            roast: '#3D1F0A',
+            caramel: '#C8813A',
+            steam: '#EDE3CC',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream text-espresso font-sans overflow-x-hidden">
+
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-espresso/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-serif font-black text-xl tracking-tight text-espresso">Luna<span class="text-caramel">  Bean</span> Cafe</a>
+      <div class="flex items-center gap-8">
+        <a href="index.html" class="text-sm font-medium text-espresso/50 hover:text-espresso transition-colors">Home</a>
+        <a href="about.html" class="text-sm font-medium text-espresso/50 hover:text-espresso transition-colors">About</a>
+        <a href="contact.html" class="text-sm font-medium text-espresso border-b-2 border-caramel pb-0.5">Contact</a>
+        <a href="contact.html" class="text-sm font-medium bg-espresso text-cream px-4 py-2 rounded-full hover:bg-roast transition-colors">Reserve a Table</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="pt-36 pb-12 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: repeating-linear-gradient(45deg, #1C0F05 0, #1C0F05 1px, transparent 0, transparent 50%); background-size: 12px 12px;"></div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <p class="text-caramel text-xs tracking-[0.3em] uppercase font-medium mb-6 reveal-up">Come visit us</p>
+      <h1 class="font-serif font-black text-6xl md:text-8xl leading-none tracking-tighter reveal-up delay-1">
+        Let's meet<br/>
+        <em class="italic text-caramel">over coffee.</em>
+      </h1>
+    </div>
+  </section>
+
+  
+  <section class="pb-24">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-5 gap-8">
+
+     
+      <div class="md:col-span-3 reveal-up delay-2">
+        <div class="bg-espresso text-cream rounded-3xl p-10">
+          <p class="text-caramel text-xs tracking-widest uppercase mb-8">Send a message</p>
+
+          <div id="form-success" class="hidden text-center py-12">
+            <p class="font-serif text-4xl font-bold mb-3">Thank you! ☕</p>
+            <p class="text-cream/50">We'll be in touch within 24 hours.</p>
+          </div>
+
+          <form id="contact-form" class="space-y-5">
+            <div class="grid grid-cols-2 gap-5">
+              <div>
+                <label class="text-cream/50 text-xs uppercase tracking-widest block mb-2">First Name</label>
+                <input type="text" id="fname" placeholder="Aarav" class="w-full bg-cream/10 border border-cream/10 rounded-xl px-4 py-3 text-cream placeholder-cream/20 focus:outline-none focus:border-caramel transition-colors" />
+              </div>
+              <div>
+                <label class="text-cream/50 text-xs uppercase tracking-widest block mb-2">Last Name</label>
+                <input type="text" id="lname" placeholder="Shrestha" class="w-full bg-cream/10 border border-cream/10 rounded-xl px-4 py-3 text-cream placeholder-cream/20 focus:outline-none focus:border-caramel transition-colors" />
+              </div>
+            </div>
+            <div>
+              <label class="text-cream/50 text-xs uppercase tracking-widest block mb-2">Email</label>
+              <input type="email" id="email" placeholder="hello@example.com" class="w-full bg-cream/10 border border-cream/10 rounded-xl px-4 py-3 text-cream placeholder-cream/20 focus:outline-none focus:border-caramel transition-colors" />
+            </div>
+            <div>
+              <label class="text-cream/50 text-xs uppercase tracking-widest block mb-2">Reason</label>
+              <select id="reason" class="w-full bg-cream/10 border border-cream/10 rounded-xl px-4 py-3 text-cream focus:outline-none focus:border-caramel transition-colors appearance-none">
+                <option value="" class="bg-espresso">Select a reason…</option>
+                <option value="reservation" class="bg-espresso">Table Reservation</option>
+                <option value="event" class="bg-espresso">Private Event</option>
+                <option value="wholesale" class="bg-espresso">Wholesale Inquiry</option>
+                <option value="other" class="bg-espresso">Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-cream/50 text-xs uppercase tracking-widest block mb-2">Message</label>
+              <textarea id="message" rows="4" placeholder="Tell us more…" class="w-full bg-cream/10 border border-cream/10 rounded-xl px-4 py-3 text-cream placeholder-cream/20 focus:outline-none focus:border-caramel transition-colors resize-none"></textarea>
+            </div>
+            <p id="form-error" class="text-red-400 text-sm hidden">Please fill in all fields.</p>
+            <button type="button" onclick="submitForm()" class="w-full bg-caramel text-cream font-medium py-4 rounded-xl hover:bg-amber-600 transition-colors text-sm uppercase tracking-widest">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+    <div class="md:col-span-2 space-y-4 reveal-up delay-3">
+        <div class="bg-steam rounded-3xl p-8">
+          <p class="text-caramel text-xs tracking-widest uppercase mb-5">Find Us</p>
+          <p class="font-serif text-xl font-bold mb-1">Roast & Ritual</p>
+          <p class="text-espresso/60 text-sm leading-relaxed">47 Thamel Marg<br/>Kathmandu, 44600<br/>Nepal</p>
+          <div class="mt-5 pt-5 border-t border-espresso/10 space-y-2 text-sm text-espresso/60">
+            <p>📞 +977 1 4441234</p>
+            <p>📧 hello@roastandritual.com</p>
+          </div>
+        </div>
+
+        <div class="bg-steam rounded-3xl p-8">
+          <p class="text-caramel text-xs tracking-widest uppercase mb-5">Hours</p>
+          <div id="hours-list" class="space-y-3 text-sm"></div>
+        </div>
+
+        <div class="bg-caramel rounded-3xl p-8 text-cream">
+          <p class="text-cream/60 text-xs tracking-widest uppercase mb-3">Currently</p>
+          <p id="open-status" class="font-serif text-2xl font-bold">Checking hours…</p>
+          <p id="open-detail" class="text-cream/60 text-sm mt-1"></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+ 
+  <footer class="bg-espresso text-cream/40 py-8">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-between items-center gap-4 text-sm">
+      <p class="font-serif font-bold text-cream/80">Roast <span class="text-caramel">&</span> Ritual</p>
+      <p>© 2024 · Thamel, Kathmandu · Built with Tailwind CSS</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

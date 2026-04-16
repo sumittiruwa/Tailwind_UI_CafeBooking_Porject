@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lunar Bean — Coffee House</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['DM Sans', 'sans-serif'],
+          },
+          colors: {
+            cream: '#F5EFE0',
+            espresso: '#1C0F05',
+            roast: '#3D1F0A',
+            caramel: '#C8813A',
+            steam: '#EDE3CC',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream text-espresso font-sans overflow-x-hidden">
+
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-espresso/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-serif font-black text-xl tracking-tight text-espresso">Luna<span class="text-caramel">  Bean</span> Cafe</a>
+      <div class="flex items-center gap-8">
+        <a href="index.html" class="nav-link text-sm font-medium text-espresso border-b-2 border-caramel pb-0.5">Home</a>
+        <a href="about.html" class="nav-link text-sm font-medium text-espresso/50 hover:text-espresso transition-colors">About</a>
+        <a href="contact.html" class="nav-link text-sm font-medium text-espresso/50 hover:text-espresso transition-colors">Contact</a>
+        <a href="contact.html" class="text-sm font-medium bg-espresso text-cream px-4 py-2 rounded-full hover:bg-roast transition-colors">Reserve a Table</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+   
+    <div class="absolute right-[-10vw] top-1/2 -translate-y-1/2 w-[60vw] h-[60vw] rounded-full border border-espresso/8 opacity-60"></div>
+    <div class="absolute right-[-5vw] top-1/2 -translate-y-1/2 w-[45vw] h-[45vw] rounded-full border border-espresso/6"></div>
+
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
+      <div class="reveal-up">
+        <p class="text-caramel text-xs tracking-[0.3em] uppercase font-medium mb-6">Est. 1987 · Kathmandu</p>
+        <h1 class="font-serif font-black text-6xl md:text-8xl leading-none tracking-tighter mb-8">
+          Where<br/>
+          <em class="italic text-caramel">every cup</em><br/>
+          tells a story.
+        </h1>
+        <p class="text-espresso/60 text-lg leading-relaxed max-w-sm mb-10">
+          Single-origin beans, slow-roasted in small batches. A quiet corner in a loud world.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="about.html" class="bg-espresso text-cream font-medium px-7 py-3.5 rounded-full hover:bg-roast transition-colors">Our Story</a>
+          <a href="#menu" class="text-espresso/60 font-medium hover:text-espresso transition-colors flex items-center gap-2">
+            View Menu
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal-up delay-2 grid grid-cols-2 gap-4">
+        <div class="bg-espresso text-cream rounded-3xl p-8 col-span-2">
+          <p class="text-caramel text-xs tracking-widest uppercase mb-3">Today's Special</p>
+          <p class="font-serif text-3xl font-bold mb-2">Ethiopian Yirgacheffe</p>
+          <p class="text-cream/50 text-sm leading-relaxed">Blueberry & jasmine notes, washed process, light roast. Available until 3 PM.</p>
+        </div>
+        <div class="bg-steam rounded-3xl p-6 text-center">
+          <p class="font-serif font-black text-5xl text-caramel">36</p>
+          <p class="text-espresso/50 text-sm mt-1">Years serving</p>
+        </div>
+        <div class="bg-steam rounded-3xl p-6 text-center">
+          <p class="font-serif font-black text-5xl text-caramel">12</p>
+          <p class="text-espresso/50 text-sm mt-1">Origin farms</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="menu" class="py-24 bg-espresso text-cream relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(-45deg, #C8813A 0, #C8813A 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="flex items-end justify-between mb-16">
+        <div>
+          <p class="text-caramel text-xs tracking-[0.3em] uppercase mb-4">Crafted with care</p>
+          <h2 class="font-serif font-black text-5xl md:text-7xl leading-none">The Menu</h2>
+        </div>
+        <p class="text-cream/30 text-sm max-w-xs text-right hidden md:block">All drinks made with filtered water and direct-trade beans roasted on-site.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-px bg-cream/10">
+        <div id="menu-items" class="contents"></div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section class="bg-caramel py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between gap-6">
+      <p class="font-serif italic text-2xl text-cream">"Good coffee, good conversation."</p>
+      <div class="flex gap-10 text-cream/80 text-sm font-medium">
+        <div><p class="text-cream/50 text-xs uppercase tracking-widest mb-1">Weekdays</p>7:00 AM – 9:00 PM</div>
+        <div><p class="text-cream/50 text-xs uppercase tracking-widest mb-1">Weekends</p>8:00 AM – 10:00 PM</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-espresso text-cream/40 py-8">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-between items-center gap-4 text-sm">
+      <p class="font-serif font-bold text-cream/80">Roast <span class="text-caramel">&</span> Ritual</p>
+      <p>© 2024 · Thamel, Kathmandu · Built with Tailwind CSS</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
